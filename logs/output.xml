@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.2 on win32)" generated="20240531 11:26:36.678" rpa="false" schemaversion="4">
+<suite id="s1" name="Bankeiro" source="C:\mb_robotizando\robot-mobile\src\Appium\Client\Bankeiro.robot">
+<test id="s1-t1" name="Recuperar login" line="10">
+<kw name="Iniciar aplicativo" library="Config" type="SETUP">
+<kw name="Get Environment Variables" library="OperatingSystem">
+<var>${ENVS}</var>
+<doc>Returns currently available environment variables as a dictionary.</doc>
+<msg timestamp="20240531 11:26:37.305" level="INFO">${ENVS} = {'ACLOCAL_PATH': 'C:\\Program Files\\Git\\mingw64\\share\\aclocal;C:\\Program Files\\Git\\usr\\share\\aclocal', 'ALLUSERSPROFILE': 'C:\\ProgramData', 'ANDROID_HOME': 'C:\\Users\\olive\\AppData\\Local\...</msg>
+<status status="PASS" starttime="20240531 11:26:37.305" endtime="20240531 11:26:37.305"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${ENVS}</arg>
+<arg>${ENVS}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20240531 11:26:37.305" level="INFO">${ENVS} = {'ACLOCAL_PATH': 'C:\\Program Files\\Git\\mingw64\\share\\aclocal;C:\\Program Files\\Git\\usr\\share\\aclocal', 'ALLUSERSPROFILE': 'C:\\ProgramData', 'ANDROID_HOME': 'C:\\Users\\olive\\AppData\\Local\...</msg>
+<status status="PASS" starttime="20240531 11:26:37.305" endtime="20240531 11:26:37.305"/>
+</kw>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>remote_url=http://localhost:4723</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=Android Emulator</arg>
+<arg>appPackage=${PACKAGE}</arg>
+<arg>appActivity=${ACTIVITY}</arg>
+<arg>automationName=UIAutomator2</arg>
+<arg>app=${EXECDIR}/apk/bankeiro.apk</arg>
+<arg>udid=emulator-5554</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" starttime="20240531 11:26:37.305" endtime="20240531 11:26:53.833"/>
+</kw>
+<status status="PASS" starttime="20240531 11:26:37.305" endtime="20240531 11:26:53.833"/>
+</kw>
+<kw name="CT: Recuperar login com sucesso" library="Forgot_Login">
+<kw name="Dado que o usuário esteja na home" library="Home">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${ENTER_HOME_BUTTON}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20240531 11:26:57.932" level="INFO">xpath criteria: //*[@resource-id="welcome_WelcomeComponent_signInButton"]
+xpath criteria: //*[@resource-id="welcome_WelcomeComponent_signInButton"]
+xpath criteria: //*[@resource-id="welcome_WelcomeComponent_signInButton"]
+xpath criteria: //*[@resource-id="welcome_WelcomeComponent_signInButton"]
+xpath criteria: //*[@resource-id="welcome_WelcomeComponent_signInButton"]
+xpath criteria: //*[@resource-id="welcome_WelcomeComponent_signInButton"]
+xpath criteria: //*[@resource-id="welcome_WelcomeComponent_signInButton"]
+xpath criteria: //*[@resource-id="welcome_WelcomeComponent_signInButton"]</msg>
+<status status="PASS" starttime="20240531 11:26:53.834" endtime="20240531 11:26:57.933"/>
+</kw>
+<status status="PASS" starttime="20240531 11:26:53.834" endtime="20240531 11:26:57.933"/>
+</kw>
+<kw name="E clique em ENTRAR" library="Home">
+<kw name="Clicar no elemento" library="Click_Element">
+<arg>${ENTER_HOME_BUTTON}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${LOCATOR}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20240531 11:26:58.575" level="INFO">xpath criteria: //*[@resource-id="welcome_WelcomeComponent_signInButton"]</msg>
+<status status="PASS" starttime="20240531 11:26:57.935" endtime="20240531 11:26:58.577"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${LOCATOR}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20240531 11:26:58.580" level="INFO">Clicking element '//*[@resource-id="welcome_WelcomeComponent_signInButton"]'.</msg>
+<msg timestamp="20240531 11:26:58.919" level="INFO">xpath criteria: //*[@resource-id="welcome_WelcomeComponent_signInButton"]</msg>
+<status status="PASS" starttime="20240531 11:26:58.577" endtime="20240531 11:26:58.919"/>
+</kw>
+<status status="PASS" starttime="20240531 11:26:57.934" endtime="20240531 11:26:58.919"/>
+</kw>
+<status status="PASS" starttime="20240531 11:26:57.933" endtime="20240531 11:26:58.919"/>
+</kw>
+<kw name="E clique em Esqueceu o login" library="User">
+<kw name="Clicar no elemento" library="Click_Element">
+<arg>${INPUT_FORGOT_LOGIN}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${LOCATOR}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20240531 11:27:00.218" level="INFO">xpath criteria: //*[@resource-id="login_LoginScreen_forgotPasswordButton"]
+xpath criteria: //*[@resource-id="login_LoginScreen_forgotPasswordButton"]</msg>
+<status status="PASS" starttime="20240531 11:26:58.921" endtime="20240531 11:27:00.218"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${LOCATOR}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20240531 11:27:00.222" level="INFO">Clicking element '//*[@resource-id="login_LoginScreen_forgotPasswordButton"]'.</msg>
+<msg timestamp="20240531 11:27:00.408" level="INFO">xpath criteria: //*[@resource-id="login_LoginScreen_forgotPasswordButton"]</msg>
+<status status="PASS" starttime="20240531 11:27:00.219" endtime="20240531 11:27:00.408"/>
+</kw>
+<status status="PASS" starttime="20240531 11:26:58.921" endtime="20240531 11:27:00.408"/>
+</kw>
+<status status="PASS" starttime="20240531 11:26:58.919" endtime="20240531 11:27:00.408"/>
+</kw>
+<kw name="Quando confirmar o cnpj corretamente" library="Forgot_Login">
+<kw name="Inserir texto" library="Insert_Text">
+<arg>${INPUT_CNPJ}</arg>
+<arg>${ENVS['CNPJ']}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${LOCATOR}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20240531 11:27:02.617" level="INFO">xpath criteria: //*[@resource-id="recoverCpfCnpj_TaxIdScreen_cpfCnpjInput"]
+xpath criteria: //*[@resource-id="recoverCpfCnpj_TaxIdScreen_cpfCnpjInput"]</msg>
+<status status="PASS" starttime="20240531 11:27:00.411" endtime="20240531 11:27:02.617"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${LOCATOR}</arg>
+<arg>${TEXT}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20240531 11:27:02.620" level="INFO">Typing text '98.764.460/0001-90' into text field '//*[@resource-id="recoverCpfCnpj_TaxIdScreen_cpfCnpjInput"]'</msg>
+<msg timestamp="20240531 11:27:03.281" level="INFO">xpath criteria: //*[@resource-id="recoverCpfCnpj_TaxIdScreen_cpfCnpjInput"]</msg>
+<status status="PASS" starttime="20240531 11:27:02.618" endtime="20240531 11:27:03.282"/>
+</kw>
+<status status="PASS" starttime="20240531 11:27:00.409" endtime="20240531 11:27:03.282"/>
+</kw>
+<kw name="Clicar no elemento" library="Click_Element">
+<arg>${RECUPERATION_BUTTON}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${LOCATOR}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20240531 11:27:03.909" level="INFO">xpath criteria: //*[@resource-id="recoverCpfCnpj_TaxIdScreen_continueButton"]</msg>
+<status status="PASS" starttime="20240531 11:27:03.283" endtime="20240531 11:27:03.909"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${LOCATOR}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20240531 11:27:03.913" level="INFO">Clicking element '//*[@resource-id="recoverCpfCnpj_TaxIdScreen_continueButton"]'.</msg>
+<msg timestamp="20240531 11:27:04.094" level="INFO">xpath criteria: //*[@resource-id="recoverCpfCnpj_TaxIdScreen_continueButton"]</msg>
+<status status="PASS" starttime="20240531 11:27:03.909" endtime="20240531 11:27:04.094"/>
+</kw>
+<status status="PASS" starttime="20240531 11:27:03.282" endtime="20240531 11:27:04.094"/>
+</kw>
+<status status="PASS" starttime="20240531 11:27:00.408" endtime="20240531 11:27:04.096"/>
+</kw>
+<kw name="Então uma mensagem de sucesso será exibida" library="Home">
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>Seu login foi enviado para o email</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20240531 11:27:04.096" endtime="20240531 11:27:06.031"/>
+</kw>
+<status status="PASS" starttime="20240531 11:27:04.096" endtime="20240531 11:27:06.031"/>
+</kw>
+<status status="PASS" starttime="20240531 11:26:53.833" endtime="20240531 11:27:06.031"/>
+</kw>
+<kw name="Fechar aplicativo" library="Config" type="TEARDOWN">
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240531 11:27:09.035" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20240531 11:27:06.033" endtime="20240531 11:27:09.035"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20240531 11:27:09.035" endtime="20240531 11:27:10.043"/>
+</kw>
+<status status="PASS" starttime="20240531 11:27:06.033" endtime="20240531 11:27:10.043"/>
+</kw>
+<status status="PASS" starttime="20240531 11:26:37.303" endtime="20240531 11:27:10.044"/>
+</test>
+<doc>Gerenciamento de casos de teste</doc>
+<status status="PASS" starttime="20240531 11:26:36.681" endtime="20240531 11:27:10.046"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Bankeiro">Bankeiro</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
